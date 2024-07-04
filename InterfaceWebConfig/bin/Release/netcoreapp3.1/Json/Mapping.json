@@ -30,6 +30,16 @@
     "TipoTraduzido": "Atributo"
   },
   {
+    "Tipo": 2,
+    "Filtro": [
+      "applicationSettings",
+      "setting"
+    ],
+    "Mudar": "value",
+    "Chave": "name",
+    "TipoTraduzido": "Elemento"
+  },
+  {
     "Tipo": 3,
     "Filtro": [
       "Data",

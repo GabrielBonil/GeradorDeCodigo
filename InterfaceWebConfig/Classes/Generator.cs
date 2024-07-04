@@ -12,11 +12,20 @@ namespace CodGeneretor
     class Generator
     {
         #region METODOS DE LISTAGEM DE PATH
+        /// <summary>
+        /// Lista projetos com Web.Config dentro
+        /// </summary>
+        /// <param name="rootDirectory"></param>
+        /// <returns>string[] - array</returns>
         public static string[] List_ProjectWebConfig(string rootDirectory)
         {
             return Directory.GetFiles(rootDirectory, "Web.config", SearchOption.AllDirectories);
         }
-
+        /// <summary>
+        /// Lista pastas com Web.Config dentro
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>string[] - array</returns>
         public static string[] List_FolderWebConfigs(string path)
         {
             return Directory.GetFiles(path, $"Web.*.config", SearchOption.AllDirectories);
@@ -25,6 +34,11 @@ namespace CodGeneretor
         #endregion
 
         #region METODOS PARA RETORNO DE NOMES DE ARQUIVOS
+        /// <summary>
+        /// Traz o nome das pastas
+        /// </summary>
+        /// <param name="paths"></param>
+        /// <returns> <code>List&lt;String&gt;</code></returns>
         public static List<string> GetName_Folder(string[] paths)
         {
             List<string> folderNames = new List<string> { };
@@ -35,6 +49,11 @@ namespace CodGeneretor
             }
             return folderNames;
         }
+        /// <summary>
+        /// Traz o nome dos Web.Config da pasta
+        /// </summary>
+        /// <param name="folderPath"></param>
+        /// <returns> <code>List&lt;String&gt;</code></returns>
 
         public static List<string> GetName_DocumentsInFolder(string[] folderPath)
         {
@@ -48,6 +67,13 @@ namespace CodGeneretor
         #endregion
 
         #region METODOS QUE TRATAM O WEBCONFIG
+        
+        /// <summary>
+        /// Método que recebe os WebConfigs, compara ambos e faz sua alteração.
+        /// Usa o campo "TipoTraduzido" do Mapping.json para verificar qual changer usar.
+        /// </summary>
+        /// <param name="originalDoc"></param>
+        /// <param name="contentDoc"></param>
         public static void ChangeWebConfig(XElement originalDoc, XElement contentDoc)
         {
             foreach (var dado in MappingJsonRead())
@@ -71,6 +97,11 @@ namespace CodGeneretor
 
         }
 
+        /// <summary>
+        /// Metodo que chama o changeWebConfig e salva o novo WebConfig.
+        /// </summary>
+        /// <param name="pathOriginalWebConfig"></param>
+        /// <param name="pathWebConfigBase"></param>
         public static void OverrideWebconfigAndSave(string pathOriginalWebConfig, string pathWebConfigBase)
         {
 
@@ -85,6 +116,10 @@ namespace CodGeneretor
         #endregion
 
         #region LEITOR DE JSON
+        /// <summary>
+        /// Metodo para deserializar o JSON de forma correta.
+        /// </summary>
+        /// <returns> <code>List&lt;MappingData&gt;</code></returns>
 
         public static List<MappingData> MappingJsonRead()
         {

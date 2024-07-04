@@ -146,7 +146,6 @@ namespace JsonMapAdd
             this.JsonList.Name = "JsonList";
             this.JsonList.Size = new System.Drawing.Size(361, 454);
             this.JsonList.TabIndex = 11;
-            this.JsonList.SelectedIndexChanged += new System.EventHandler(this.JsonList_SelectedIndexChanged);
             // 
             // slctRmvBtn
             // 
@@ -191,7 +190,6 @@ namespace JsonMapAdd
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Interface";
             this.Text = "JsonController";
-            this.Load += new System.EventHandler(this.Interface_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

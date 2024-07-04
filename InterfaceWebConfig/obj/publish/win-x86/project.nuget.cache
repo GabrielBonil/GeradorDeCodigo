@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "C2L2YIA9XDcHI4EMsLOD0ahuR6lfMhf6gB03GtmjJWxTAQLF0W0MB/Sw/k5zJ+hfyBTUKH/y4Q7tQ71LAASMnw==",
+  "dgSpecHash": "dGuKv3yZ0FmljJBh7yQot32F367zyVPj24PmOAuo0f0Yrvr+z6IWX7NRFgk7jkjPbtHOJJTQ190pIk7k/QjftA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\artur.trombim\\Documents\\Desenvolvimento\\Meus Projetos\\GeradorDeCodigo\\InterfaceWebConfig\\InterfaceWebConfig.csproj",
+  "projectFilePath": "C:\\Users\\artur.trombim\\Documents\\Desenvolvimento\\C#\\GeradorDeCodigo\\InterfaceWebConfig\\InterfaceWebConfig.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\artur.trombim\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\artur.trombim\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.18\\microsoft.netcore.app.runtime.win-x86.3.1.18.nupkg.sha512",
     "C:\\Users\\artur.trombim\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.18\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.18.nupkg.sha512",
     "C:\\Users\\artur.trombim\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.18\\microsoft.aspnetcore.app.runtime.win-x86.3.1.18.nupkg.sha512"

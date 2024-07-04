@@ -77,7 +77,7 @@ namespace JsonMapAdd
             enableAddButton();
         }
         private void enableAddButton() {
-            if (changeText.Text.Length > 0 || keyText.Text.Length > 0 || filterOneTxt.Text.Length > 0 || tipoBuscaTxt.SelectedIndex != -1)
+            if (changeText.Text.Length > 0 && keyText.Text.Length > 0 && filterOneTxt.Text.Length > 0 && tipoBuscaTxt.SelectedIndex != -1)
             {
                 AddBtn.Enabled = true;
             }

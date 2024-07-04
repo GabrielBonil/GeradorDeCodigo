@@ -8,8 +8,7 @@ namespace CodGeneretor
 {
     class Manipulator
     {
-        #region METODOS DE BUSCA
-
+        #region METODOS DE ALTERAÇÃO
         /// <summary>
         /// Método para mudar ELEMENTO especifico no XML
         /// ( contentDoc , originalDoc , filtros ,  mudar , atributo )
@@ -141,11 +140,15 @@ namespace CodGeneretor
                 originalValue.Value = newValue.Value;
             }
         }
+        #endregion
 
+        #region METODOS DE BUSCA
         /// <summary>
         /// Método para retornar ELEMENTO XML já FILTRADO
         /// ( doc , filtros )
         /// </summary>
+        /// <returns>IEnumerable</returns>
+        /// 
         public static IEnumerable<XElement> GetDecendants(XElement doc, List<string> filtros)
         {
             IEnumerable<XElement> tags = doc.Descendants(filtros[0]);
@@ -162,6 +165,7 @@ namespace CodGeneretor
         /// Método para retornar Elemento Servers ou Server
         /// ( Key , filtros )
         /// </summary>
+        /// <returns>XElement</returns>
         public static XElement GetServers(XElement originalKey, List<string> filtros)
         {
             XElement originalValue = null;

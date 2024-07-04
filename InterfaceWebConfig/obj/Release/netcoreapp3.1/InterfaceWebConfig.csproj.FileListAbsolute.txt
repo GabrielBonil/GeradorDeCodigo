@@ -55,3 +55,7 @@ C:\Users\artur.trombim\Documents\Desenvolvimento\Meus Projetos\GeradorDeCodigo\I
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\bin\Release\netcoreapp3.1\Interface.cs
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\bin\Release\netcoreapp3.1\resources\ico.ico
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\obj\Release\netcoreapp3.1\InterfaceWebConfig.Interface.resources
+C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\bin\Release\netcoreapp3.1\Json\Mapping.json
+C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\obj\Release\netcoreapp3.1\InterfaceWebConfig.csproj.AssemblyReference.cache
+C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\InterfaceWebConfig\obj\Release\netcoreapp3.1\InterfaceWebConfig.csproj.CopyComplete
