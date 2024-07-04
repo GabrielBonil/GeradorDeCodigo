@@ -26,7 +26,7 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    return;
+                    continue;
                 }
 
                 XElement originalKey = originalTags.FirstOrDefault(e => (string)e.Attribute(atributo) == key.Value);
@@ -57,7 +57,7 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    return;
+                    continue;
                 }
 
                 XElement originalKey = originalTags.FirstOrDefault(e => (string)e.Attribute(atributo) == key.Value);
@@ -107,7 +107,7 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    return;
+                    continue;
                 }
 
                 XElement originalKey = originalTags.FirstOrDefault(e => (string)e.Attribute(atributo) == key.Value);
