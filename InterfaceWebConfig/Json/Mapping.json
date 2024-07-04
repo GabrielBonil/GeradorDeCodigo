@@ -1,0 +1,82 @@
+[
+  {
+    "Tipo": 1,
+    "Filtro": [
+      "activerecord",
+      "add"
+    ],
+    "Mudar": "value",
+    "Chave": "key",
+    "TipoTraduzido": "Atributo"
+  },
+  {
+    "Tipo": 1,
+    "Filtro": [
+      "appSettings",
+      "add"
+    ],
+    "Mudar": "value",
+    "Chave": "key",
+    "TipoTraduzido": "Atributo"
+  },
+  {
+    "Tipo": 1,
+    "Filtro": [
+      "connectionStrings",
+      "add"
+    ],
+    "Mudar": "connectionString",
+    "Chave": "name",
+    "TipoTraduzido": "Atributo"
+  },
+  {
+    "Tipo": 2,
+    "Filtro": [
+      "applicationSettings",
+      "setting"
+    ],
+    "Mudar": "value",
+    "Chave": "name",
+    "TipoTraduzido": "Elemento"
+  },
+  {
+    "Tipo": 3,
+    "Filtro": [
+      "Data",
+      "DataFactory"
+    ],
+    "Mudar": "ConnectionString",
+    "Chave": "",
+    "TipoTraduzido": "Server"
+  },
+  {
+    "Tipo": 1,
+    "Filtro": [
+      "client",
+      "endpoint"
+    ],
+    "Mudar": "adress",
+    "Chave": "contract",
+    "TipoTraduzido": "Atributo"
+  },
+  {
+    "Tipo": 3,
+    "Filtro": [
+      "itravel.framework",
+      "client"
+    ],
+    "Mudar": "servers",
+    "Chave": "provider",
+    "TipoTraduzido": "Server"
+  },
+  {
+    "Tipo": 4,
+    "Filtro": [
+      "Data",
+      "DataFactory"
+    ],
+    "Mudar": "NOTHING",
+    "Chave": "ConnectionString",
+    "TipoTraduzido": "Direct"
+  }
+]

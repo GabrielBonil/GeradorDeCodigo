@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace InterfaceWebConfig
 {
-    public partial class Form1 : Form
+    public partial class Interface : Form
     {
         private static string[] foundWebConfigs;
         private static string folderSelectedPath;
         private static string[] folderFiles;
-        public Form1()
+        public Interface()
         {
             InitializeComponent();
         }

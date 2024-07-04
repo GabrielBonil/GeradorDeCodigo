@@ -26,7 +26,6 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    Console.WriteLine("Erro no value ou key");
                     return;
                 }
 
@@ -34,12 +33,11 @@ namespace CodGeneretor
 
                 if (originalKey == null)
                 {
-                    Console.WriteLine($"Elemento com atributo {atributo} = {key.Value} não encontrado.");
-                    return;
+                    continue;
                 }
-
                 XElement originalValue = originalKey.Element(mudar);
                 originalValue.Value = value.Value;
+                                
             }
         }
 
@@ -59,7 +57,6 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    Console.WriteLine("Erro no value ou key");
                     return;
                 }
 
@@ -73,8 +70,7 @@ namespace CodGeneretor
 
                 if (originalKey == null)
                 {
-                    Console.WriteLine($"Elemento com atributo {atributo} = {key.Value} não encontrado.");
-                    return;
+                    continue;
                 }
 
                 XAttribute originalValue = originalKey.Attribute(mudar);
@@ -98,7 +94,6 @@ namespace CodGeneretor
             {
                 XElement elemento = originalTags.Single(tag => tag.Attribute(atributo).Value == "sqlserver");
 
-                Console.WriteLine($"elemento: {elemento}");
                 XElement elementoValue = GetServers(elemento, new List<string> { mudar, "server" });
 
                 XElement novoElemento = XElement.Parse("<server host=\"DBPROD01\"/>"); //Não fazer replace diretamente porque o < e > se tornam elementos html &lt; e &gt;
@@ -112,7 +107,6 @@ namespace CodGeneretor
 
                 if (value == null || key == null)
                 {
-                    Console.WriteLine("Erro no value ou key");
                     return;
                 }
 
@@ -120,8 +114,7 @@ namespace CodGeneretor
 
                 if (originalKey == null)
                 {
-                    Console.WriteLine($"Elemento com atributo {atributo} = {key.Value} não encontrado.");
-                    return;
+                    continue;
                 }
 
                 XElement originalValue = GetServers(originalKey, new List<string> { mudar, "server" });

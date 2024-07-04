@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ojU+ERTfsOEYa5z8EO8JluF6sYxmLb4Gks0wGp6HzLIzP0hrqgGNKtfvzX9QpujBPQxP8WA51BaBEbFzOj/x9A==",
+  "dgSpecHash": "LD0xUYH9ssy1IzNhtCvKokLKmlJ/qKLNLoC04AIn6k5gWA0jZqLlq+YFYFlg2ZjG4sGy3zxGzlcrVbIt+4opaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\artur.trombim\\Documents\\Desenvolvimento\\C#\\GeradorDeCodigo\\InterfaceWebConfig\\InterfaceWebConfig.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\artur.trombim\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

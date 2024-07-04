@@ -1,7 +1,7 @@
 ﻿
 namespace InterfaceWebConfig
 {
-    partial class Form1
+    partial class Interface
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace InterfaceWebConfig
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interface));
             this.SelectFileBTN = new System.Windows.Forms.Button();
             this.ProjectPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -175,7 +175,7 @@ namespace InterfaceWebConfig
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,7 +196,7 @@ namespace InterfaceWebConfig
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(746, 444);
             this.MinimumSize = new System.Drawing.Size(746, 444);
-            this.Name = "Form1";
+            this.Name = "Interface";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WEB Config";

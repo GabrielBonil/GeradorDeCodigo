@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Form1.cs">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Interface.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -26,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Json\Mapping.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="resources\ico.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

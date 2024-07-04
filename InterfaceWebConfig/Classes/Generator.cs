@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InterfaceWebConfig.DataClass;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,42 +50,24 @@ namespace CodGeneretor
         #region METODOS QUE TRATAM O WEBCONFIG
         public static void ChangeWebConfig(XElement originalDoc, XElement contentDoc)
         {
-            #region ATRIBUTO
-            
-            Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "value", atributo: "key",
-            filtros: new List<string> { "activerecord", "add" });
-            
-            Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "value", atributo: "key",
-            filtros: new List<string> { "appSettings", "add" });
+            foreach (var dado in MappingJsonRead())
+            {
+                switch (dado.TipoTraduzido)
+                {
+                    case "Atributo":
+                        Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave ,filtros: dado.Filtro ); break;
+                    case "Elemento":
+                        Manipulator.ElementoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave, filtros: dado.Filtro); break;
+                    case "Server":
+                        Manipulator.ServerXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave, filtros: dado.Filtro); break;
+                    case "Direct":
+                        Manipulator.DirectChange(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, filtros: dado.Filtro); break;
+                    default:
+                        break;
+                }
 
-            Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "connectionString", atributo: "name",
-            filtros: new List<string> { "connectionStrings", "add" });
+            }
 
-            Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "address", atributo: "contract",
-            filtros: new List<string> { "client", "endpoint" });
-
-            #endregion
-
-            #region ELEMENTO
-            
-            Manipulator.ElementoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "value", atributo: "name",
-            filtros: new List<string> { "applicationSettings", "setting" });
-           
-            #endregion
-            
-            #region SERVER
-            
-            Manipulator.ServerXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "servers", atributo: "provider",
-            filtros: new List<string> { "itravel.framework", "client" });
-            
-            #endregion
-            
-            #region DIRECT CHANGE
-
-            Manipulator.DirectChange(contentDoc: contentDoc, originalDoc: originalDoc, mudar: "ConnectionString",
-            filtros: new List<string> { "Data", "DataFactory" });
-            
-            #endregion
 
         }
 
@@ -93,11 +77,22 @@ namespace CodGeneretor
             XElement contentDoc = XElement.Load(pathWebConfigBase);
             XElement originalDoc = XElement.Load(pathOriginalWebConfig);
 
+
             Generator.ChangeWebConfig(originalDoc: originalDoc, contentDoc: contentDoc);
 
             originalDoc.Save(pathOriginalWebConfig);
         }
         #endregion
 
+        #region LEITOR DE JSON
+
+        public static List<MappingData> MappingJsonRead()
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Json\Mapping.json");
+            string jsonString = File.ReadAllText(filePath);
+            List<MappingData> dadosList = JsonConvert.DeserializeObject<List<MappingData>>(jsonString);
+            return dadosList;
+        }
+        #endregion
     }
 }
