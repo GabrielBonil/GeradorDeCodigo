@@ -10,17 +10,12 @@ namespace JsonMapAdd
         public List<string> Filtro { get; set; }
         public string Mudar { get; set; }
         public string Chave { get; set; }
-        public string TipoTraduzido { get; set; }
-
-
-        public static Dictionary<int,string> Type = new Dictionary<int, string>
+        public enum typeAction
         {
-            { 1,"Atributo"},
-            { 2,"Elemento"},
-            { 3,"Server"},
-            { 4,"Direct"}
-        };
-
-
+            Atributo,
+            Elemento,
+            Server,
+            Direct
+        }
     }
 }

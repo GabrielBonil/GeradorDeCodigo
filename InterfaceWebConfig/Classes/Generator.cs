@@ -78,15 +78,15 @@ namespace CodGeneretor
         {
             foreach (var dado in MappingJsonRead())
             {
-                switch (dado.TipoTraduzido)
+                switch (dado.Tipo)
                 {
-                    case "Atributo":
+                    case ((int)MappingData.typeAction.Atributo):
                         Manipulator.AtributoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave ,filtros: dado.Filtro ); break;
-                    case "Elemento":
+                    case ((int)MappingData.typeAction.Elemento):
                         Manipulator.ElementoXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave, filtros: dado.Filtro); break;
-                    case "Server":
+                    case ((int)MappingData.typeAction.Server):
                         Manipulator.ServerXml(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, atributo: dado.Chave, filtros: dado.Filtro); break;
-                    case "Direct":
+                    case ((int)MappingData.typeAction.Direct):
                         Manipulator.DirectChange(contentDoc: contentDoc, originalDoc: originalDoc, mudar: dado.Mudar, filtros: dado.Filtro); break;
                     default:
                         break;

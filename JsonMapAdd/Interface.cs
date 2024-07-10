@@ -19,10 +19,12 @@ namespace JsonMapAdd
         public Interface()
         {
             InitializeComponent();
-            foreach(var tipo in MappingData.Type)
+            
+            foreach(MappingData.typeAction tipo in Enum.GetValues(typeof(MappingData.typeAction)))
             {
-                tipoBuscaTxt.Items.Add(tipo.Value);
+                tipoBuscaTxt.Items.Add(tipo);
             }
+            attJsonList();
         }
 
         private void filtroLabel_Click(object sender, EventArgs e)
@@ -37,33 +39,29 @@ namespace JsonMapAdd
             List<MappingData> dadosList = MappingJsonRead();
             MappingData newMap = new MappingData
             {
-                Tipo = tipoBuscaTxt.SelectedIndex + 1,
+                Tipo = tipoBuscaTxt.SelectedIndex,
                 Filtro = filtro,
                 Chave = keyText.Text,
                 Mudar = changeText.Text,
             };
             dadosList.Add(newMap);
             OverrideJson(dadosList);
-
+            attJsonList();
         }
 
         private void attBtn_Click(object sender, EventArgs e)
         {
-            JsonList.Items.Clear();
-            foreach (var dado in MappingJsonRead())
-            {
-                JsonList.Items.Add($"Filtro:  {dado.Filtro[0]}, {dado.Filtro[1]}");
-            }
+            attJsonList();
         }
 
         private void tipoBuscaTxt_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Verifica se o tipo é direct, pois no direct não tem Chave
-            if (tipoBuscaTxt.SelectedIndex + 1 == 4) {
-                changeText.Text = "NOTHING";
-                changeText.Enabled = false;
+            if (tipoBuscaTxt.SelectedIndex == 3) {
+                keyText.Text = "NOTHING";
+                keyText.Enabled = false;
             }
-            else { changeText.Enabled = true;}
+            else { keyText.Enabled = true;}
             enableAddButton();
         }
 
@@ -87,16 +85,14 @@ namespace JsonMapAdd
         private void slctRmvBtn_Click(object sender, EventArgs e)
         {
             List<MappingData> dadosList = MappingJsonRead();
+            int aux = 0;
             foreach (int index in JsonList.CheckedIndices)
             {
                 dadosList.RemoveAt(index);
+                aux+= 1;
             };
             OverrideJson(dadosList);
-            JsonList.Items.Clear();
-            foreach (var dado in MappingJsonRead())
-            {
-                JsonList.Items.Add($"Filtro:  {dado.Filtro[0]}, {dado.Filtro[1]}");
-            }
+            attJsonList();
         }
         #endregion
         
@@ -161,11 +157,18 @@ namespace JsonMapAdd
         /// <param name="json"></param>
         public static void OverrideJson(List<MappingData> json)
         {
-            foreach (var dado in json)
-            {
-                dado.TipoTraduzido = MappingData.Type[dado.Tipo];
-            }
             File.WriteAllText(FindTargetDirectory(AppDomain.CurrentDomain.BaseDirectory, "GeradorDeCodigo") + @"\InterfaceWebConfig\Json\Mapping.json", System.Text.Json.JsonSerializer.Serialize(json));
+        }
+        /// <summary>
+        /// Metodo responsavel por atualizar a lista de json na tela do app
+        /// </summary>
+        public void attJsonList()
+        {
+            JsonList.Items.Clear();
+            foreach (var dado in MappingJsonRead())
+            {
+                JsonList.Items.Add($"Filtro:  {dado.Filtro[0]}, {dado.Filtro[1]}");
+            }
         }
         #endregion
     }
