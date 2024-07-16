@@ -27,15 +27,6 @@
     "Chave": "name"
   },
   {
-    "Tipo": 2,
-    "Filtro": [
-      "Data",
-      "DataFactory"
-    ],
-    "Mudar": "ConnectionString",
-    "Chave": ""
-  },
-  {
     "Tipo": 0,
     "Filtro": [
       "client",
@@ -43,6 +34,15 @@
     ],
     "Mudar": "address",
     "Chave": "contract"
+  },
+  {
+    "Tipo": 1,
+    "Filtro": [
+      "applicationSettings",
+      "setting"
+    ],
+    "Mudar": "value",
+    "Chave": "name"
   },
   {
     "Tipo": 2,
@@ -54,12 +54,12 @@
     "Chave": "provider"
   },
   {
-    "Tipo": 0,
+    "Tipo": 3,
     "Filtro": [
-      "applicationSettings",
-      "setting"
+      "Data",
+      "DataFactory"
     ],
-    "Mudar": "value",
-    "Chave": "key"
+    "Mudar": "ConnectionString",
+    "Chave": "NOTHING"
   }
 ]

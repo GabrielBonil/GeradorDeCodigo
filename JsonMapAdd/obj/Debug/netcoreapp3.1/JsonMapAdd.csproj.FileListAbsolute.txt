@@ -5,7 +5,6 @@ C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\b
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\bin\Debug\netcoreapp3.1\JsonMapAdd.runtimeconfig.dev.json
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\bin\Debug\netcoreapp3.1\JsonMapAdd.dll
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\bin\Debug\netcoreapp3.1\JsonMapAdd.pdb
-C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\obj\Debug\netcoreapp3.1\JsonMapAdd.csproj.AssemblyReference.cache
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\obj\Debug\netcoreapp3.1\JsonMapAdd.Interface.resources
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\obj\Debug\netcoreapp3.1\JsonMapAdd.csproj.GenerateResource.cache
 C:\Users\artur.trombim\Documents\Desenvolvimento\C#\GeradorDeCodigo\JsonMapAdd\obj\Debug\netcoreapp3.1\JsonMapAdd.GeneratedMSBuildEditorConfig.editorconfig
