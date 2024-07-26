@@ -61,5 +61,14 @@
     ],
     "Mudar": "ConnectionString",
     "Chave": "NOTHING"
+  },
+  {
+    "Tipo": 0,
+    "Filtro": [
+      "providers",
+      "add"
+    ],
+    "Mudar": "roleProviderUri",
+    "Chave": "name"
   }
 ]
