@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace CodGeneretor
 {
@@ -85,10 +86,22 @@ namespace CodGeneretor
         {
             IEnumerable<XElement> newTags = GetDecendants(contentDoc, filtros);
             IEnumerable<XElement> originalTags = GetDecendants(originalDoc, filtros);
+            bool existSqlServerOnNewTag=false;
+            bool existSqlServerOnOriginalTag=false;
+            try
+            {
+                 existSqlServerOnNewTag = newTags.Any(tag => tag.Attribute(atributo).Value == "sqlserver");
+                 existSqlServerOnOriginalTag = originalTags.Any(tag => tag.Attribute(atributo).Value == "sqlserver");
 
-            bool existSqlServerOnNewTag = newTags.Any(tag => tag.Attribute(atributo).Value == "sqlserver");
-            bool existSqlServerOnOriginalTag = originalTags.Any(tag => tag.Attribute(atributo).Value == "sqlserver");
-
+            }
+            catch(Exception)
+            {
+                MessageBox.Show($"Erro ao capturar o server. " +
+                    $"Após finalizado, confira se todos os campos dentro do nó <{filtros[0]}> foram alterados corretamente.");
+            }
+            
+            //MUDA DIRETAMENTE CASO NO ORIGINAL TENHA E O NO OUTRO NÃO
+            
             if (!existSqlServerOnNewTag && existSqlServerOnOriginalTag)
             {
                 XElement elemento = originalTags.Single(tag => tag.Attribute(atributo).Value == "sqlserver");
@@ -98,7 +111,6 @@ namespace CodGeneretor
                 XElement novoElemento = XElement.Parse("<server host=\"DBPROD01\"/>"); //Não fazer replace diretamente porque o < e > se tornam elementos html &lt; e &gt;
                 elementoValue.ReplaceWith(novoElemento);
             }
-
             foreach (XElement item in newTags)
             {
                 XAttribute key = item.Attribute(atributo);

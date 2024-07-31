@@ -89,5 +89,10 @@ namespace InterfaceWebConfig
                 }
             }
         }
+
+        private void Interface_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

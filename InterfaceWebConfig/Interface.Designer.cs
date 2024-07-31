@@ -199,7 +199,8 @@ namespace InterfaceWebConfig
             this.Name = "Interface";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WEB Config";
+            this.Text = "WEB Config 1.0.3";
+            this.Load += new System.EventHandler(this.Interface_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
